@@ -1,0 +1,59 @@
+:root {
+    --fuentePrincipal: 'Staatliches', cursive;
+    --primario: #9C27B0;
+    --primariooSCURO: #89119D;
+    --secundario: #FFCE00;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--primario);
+    line-height: 2;
+    font-size: 2rem;
+}
+
+.header {
+    display: grid;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.barra {
+    background-color: var(--primariooSCURO);
+    padding: 1rem 0;
+}
+
+.barra .nav {
+    display: grid;
+    /*Asigna 2 columnas de 200px cada en la misma fila*/
+    /*En vez de 200px se puede utilizar 'auto', pero el ancho de la columna
+    se ajustará automáticamente al contenido*/
+    grid-template-columns: repeat(2, 200px);
+    /*Separación entre columnas*/
+    grid-column-gap: 1rem;
+    /*centramos las columnas*/
+    justify-content: center;
+}
+
+.barra .nav a {
+    font-family: var(--fuentePrincipal);
+    font-size: 3rem;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    /*Se utiliza para que se centre dentro de la columna especificada*/
+}
+
+.barra .nav a:hover {
+    color: var(--secundario);
+}
