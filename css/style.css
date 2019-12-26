@@ -22,6 +22,32 @@ body {
     font-size: 2rem;
 }
 
+h1 {
+    color: var(--secundario);
+    text-align: center;
+    font-size: 4rem;
+    font-family: var(--fuentePrincipal);
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.contenedor {
+    /*ancho inicial parra dispositivos moviles*/
+    width: 95%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* Aplicar siempre las imagenes responsivas en todo proyecto */
+
+img {
+    max-width: 100%;
+}
+
 .header {
     display: grid;
     justify-content: center;
@@ -56,4 +82,62 @@ body {
 
 .barra .nav a:hover {
     color: var(--secundario);
+}
+
+.lista-productos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    ;
+}
+
+@media (min-width: 768px) {
+    .lista-productos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.producto {
+    background-color: var(--primariooSCURO);
+}
+
+.contenido-producto {
+    font-family: var(--fuentePrincipal);
+    color: #ffffff;
+    text-align: center;
+    margin: 1rem 0;
+    line-height: 1.2;
+}
+
+.contenido-producto .titulo {
+    font-size: 4rem;
+}
+
+.contenido-producto .precio {
+    font-size: 2.8rem;
+    color: var(--secundario);
+}
+
+.grafico {
+    min-height: 30rem;
+    grid-column: 1 / 3;
+    background-size: cover;
+    background-position: center center;
+}
+
+.grafico-1 {
+    background-image: url(../img/grafico1.jpg);
+    grid-row: 2 / 3;
+}
+
+.grafico-2 {
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8 / 9;
+}
+
+@media (min-width: 768px) {
+    .grafico-2 {
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
 }
