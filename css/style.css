@@ -22,6 +22,18 @@ body {
     font-size: 2rem;
 }
 
+body.footer-fijo {
+    display: flex;
+    /* colocamos flex-direction:column, para evitar que se deforme toda la estructura */
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body.footer-fijo main {
+    /* Con flex: 1, agrandamos el main hasta donde pueda, para que el footer se mantenga en la parte inferior */
+    flex: 1;
+}
+
 h1 {
     color: var(--secundario);
     text-align: center;
@@ -31,6 +43,9 @@ h1 {
 }
 
 p {
+    font-size: 1.8rem;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
 
@@ -140,4 +155,65 @@ img {
         grid-row: 5 / 6;
         grid-column: 2 / 4;
     }
+}
+
+.contenedor-informacion {
+    display: grid;
+    /* Se utiliza autofit, con un valor máximo y un valor minimo para evitar el uso de media queries y que sea responsive */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-column-gap: 2rem;
+}
+
+.imagen-producto {
+    width: 100%;
+}
+
+.footer {
+    background-color: var(--primariooSCURO);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.copyright {
+    font-family: var(--fuentePrincipal);
+    color: #ffffff;
+    text-align: center;
+}
+
+.formulario-pedido {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 6rem);
+    grid-gap: 1rem;
+    /*grid-gap se utiliza para el espaciado en filas y columnas al mismo tiempo*/
+}
+
+.campo {
+    background-color: transparent;
+    border: 5px solid white;
+    font-family: var(--fuentePrincipal);
+    font-size: 3rem;
+    padding: 1rem;
+    width: 100%;
+    color: #ffffff;
+}
+
+.talla {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    grid-column: 1 / 3;
+}
+
+.boton {
+    background-color: var(--secundario);
+    font-size: 2rem;
+    font-family: var(--fuentePrincipal);
+    border: none;
+    transition: background-color .3s ease;
+    grid-column: 1 / 4;
+}
+
+.boton:hover {
+    cursor: pointer;
+    background-color: rgb(233, 187, 2);
 }
